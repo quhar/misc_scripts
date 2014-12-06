@@ -5,7 +5,7 @@ import elasticsearch
 
 INDEX = 'test-index'
 TYPE = 'test-type'
-NR_OF_QUERIES = 300000
+NR_OF_QUERIES = 100000
 NR_OF_TESTS = 100
 
 es = elasticsearch.Elasticsearch('localhost')
@@ -55,6 +55,7 @@ mappings = {
                 },
                 'location': {
                     u'type': u'geo_point',
+                    u'doc_values': u'true'
                 }
             }
         }
